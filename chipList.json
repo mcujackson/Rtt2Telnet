@@ -1,0 +1,12 @@
+{
+    "chipList": 
+    [
+      "STM32L031G6",
+      "STM32F407IG",
+      "STM32F407VE",
+      "STM32F407ZG",
+      "STM32F427ZI"
+    ],
+
+    "default":"STM32L031G6"
+}

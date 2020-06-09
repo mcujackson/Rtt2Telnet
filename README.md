@@ -1,5 +1,5 @@
-# Rtt2Telnet
-一个便捷的嵌入式软件调试工具
+# SEGGER_RTT To Telnet   
+#-- 通过Telnet 转发 SEGGER_RTT 数据
 
 mcujackson
 

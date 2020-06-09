@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>273</width>
+    <height>208</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>RTT转Telnet工具</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_7">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="font">
+           <font>
+            <pointsize>13</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>芯片型号:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="chipCombox"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <pointsize>13</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>目标接口:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="interfaceCombox">
+          <item>
+           <property name="text">
+            <string>SWD</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>JTAG</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cJTAG</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>FINE</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="font">
+           <font>
+            <pointsize>13</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>速度:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="speedCombox">
+          <property name="currentIndex">
+           <number>20</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>5kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>10kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>20kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>30kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>50kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>100kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>200kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>300kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>400kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>500kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>600kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>650kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>750kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>900kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>1000kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>1334kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>1600kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2000kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2667kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3200kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4000kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4800kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5334kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>6000kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8000kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>9600kHz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>12000kHz</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="font">
+           <font>
+            <pointsize>13</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>通道1对应端口号:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="channel0Port">
+          <property name="text">
+           <string>6198</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="font">
+           <font>
+            <pointsize>13</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>通道2对应端口号:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="channel1Port">
+          <property name="text">
+           <string>6199</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="QPushButton" name="switchButton">
+          <property name="text">
+           <string>开启</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="hideButton">
+          <property name="text">
+           <string>隐入托盘</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>273</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>作者</string>
+    </property>
+    <widget class="QMenu" name="menu_2">
+     <property name="title">
+      <string>邮箱</string>
+     </property>
+     <addaction name="action619808090_qq_com"/>
+    </widget>
+    <widget class="QMenu" name="menu_3">
+     <property name="title">
+      <string>姓名</string>
+     </property>
+     <addaction name="actionDriver"/>
+    </widget>
+    <addaction name="menu_2"/>
+    <addaction name="menu_3"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <action name="action619808090_qq_com">
+   <property name="text">
+    <string>619808090@qq.com</string>
+   </property>
+  </action>
+  <action name="actionDriver">
+   <property name="text">
+    <string>Driver</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
