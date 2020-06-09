@@ -5,13 +5,13 @@
 mcujackson
 
 适用于能通过JLink调试的嵌入式芯片，支持SEGGER_RTT 通道0 和 通道1,支持多种目标接口
-包括但不限于以下目标接口类型:SWD、JTAG、CJTAG、FINE，连接速度可选，两路telnet服务器端口号可选
+包括但不限于以下目标接口类型:SWD、JTAG、CJTAG、FINE，连接速度可选，两路telnet服务器端口号可选。
 
 ## 1 简述
 
 ### 1.1 背景
 
-在项目调试过程中，遇到串口较少的芯片，除去必须用作与其他外设通讯的串口外，已无剩下可用作调试打印的串口。另外，每次整机调试不仅需要携带j-link 或 st-link此类的烧录工具外，还需要携带串口线用作调试输出，而且大多数情况，为了保证调试串口的问题，许多公司都将芯片输出ttl电平接入RS-232 或 485电平转换芯片转换，使用十分不便，所以开发此工具，用SEGGER_RTT模拟出两路串口，只需通过telnet便可访问两路通道的数据，使用非常方便，绝大多数芯片都能完美兼容。完美解决因串口线连接不稳定而导致调试不便问题
+在项目调试过程中，遇到串口较少的芯片，除去必须用作与其他外设通讯的串口外，已无剩下可用作调试打印的串口。另外，每次整机调试不仅需要携带j-link 或 st-link此类的烧录工具外，还需要携带串口线用作调试输出，而且大多数情况，为了保证调试串口的问题，许多公司都将芯片输出ttl电平接入RS-232 或 485电平转换芯片转换，使用十分不便，所以开发此工具，用SEGGER_RTT模拟出两路串口，只需通过telnet便可访问两路通道的数据，使用非常方便，绝大多数芯片都能完美兼容。完美解决因串口线连接不稳定而导致调试不便问题。
 
 ### 1.2 实现方式
 
@@ -52,14 +52,14 @@ void rttLogInit(void)
 }
 ```
 
-另外可根据需求修改通道0的缓冲区带下，在#include "SEGGER_RTT_Conf.h"，个人修改为512，基本满足数据收发需求
+另外可根据需求修改通道0的缓冲区大小，在#include "SEGGER_RTT_Conf.h"文件中，个人修改为512，基本满足数据收发需求
 
 ```c
  #define BUFFER_SIZE_UP                            (512)  // Size of the buffer for terminal output of target, up to host (Default: 1k)
  #define BUFFER_SIZE_DOWN                          (512)    // Size of the buffer for terminal input to target from host (Usually keyboard input) (Default: 16)
  ```
 
-至此，SEGGER_RTT 模块就简单的移植完成了
+至此，SEGGER_RTT 模块就简单的移植完成了。  
 为了方便测试，在main.c函数中需要调用SEGGER_RTT的发送函数当做测试，可以使用  
 SEGGER_RTT_printf(unsigned BufferIndex, const char * sFormat, ...);
 BufferIndex代表通道号，后面的填写跟printf一模一样（不过对浮点型的支持似乎不是那么好，有兴趣的同学可以多试试  
@@ -74,7 +74,7 @@ BufferIndex代表通道号，后面的填写跟printf一模一样（不过对浮
      }
      SEGGER_RTT_Write(0, "channel0:mcujackson666\r\n", 24);//将数据发送
 
-     while (SEGGER_RTT_GetAvailWriteSpace(1) < 23)//判断通道 1 写buffer是否有足够的空间写
+     while (SEGGER_RTT_GetAvailWriteSpace(1) < 24)//判断通道 1 写buffer是否有足够的空间写
      {
         HAL_Delay(1);//你自己的延迟函数
      }
@@ -88,7 +88,7 @@ BufferIndex代表通道号，后面的填写跟printf一模一样（不过对浮
 ![使用](doc/工具截图.png)
   
 + 1.首先打开工程目录下的chipList.json  
-   这是一个json格式的文件，可以将自己常用的芯片型号添加进列表中，如果加上逗号哦，不然程序解析错误可能会出现奔溃的情况，还可以将  "default":"STM32L031G6"  修改为自己最常用的芯片型号，这样在程序打开的时候就会直接选择该型号的芯片  
+   这是一个json格式的文件，可以将自己常用的芯片型号添加进列表中，记得加上逗号哦，不然程序解析错误可能会出现奔溃的情况，还可以将  "default":"STM32L031G6"  修改为自己最常用的芯片型号，这样在程序打开的时候就会直接选择该型号的芯片  
 
 ![使用](doc/json文件说明.png)
 
@@ -98,7 +98,7 @@ BufferIndex代表通道号，后面的填写跟printf一模一样（不过对浮
 
 ### 2.3 使用SecureCRT登录Telnet服务器  
 
-1.如果在本机开启该软件，可以用直接用127.0.0.1的地址方式，如下图
+1.如果在本机开启该软件，可以用直接用127.0.0.1的地址即可登录到telnet服务器，如下图
 ![使用](doc/SecureCRT使用教程1.png)
 
 ![使用](doc/结果图.bmp)
